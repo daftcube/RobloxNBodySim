@@ -187,10 +187,7 @@ RunService.Heartbeat:Connect(
 		for i = 1, #simulatedObjects - 1 do
 			for j = i+1, #simulatedObjects do
 				-- Apply gravity if and only if 
-				if simulatedObjects[i] ~= simulatedObjects[j] then
-					ApplyGravity(simulatedObjects[i], simulatedObjects[j], deltaTime)
-				end
-				
+				ApplyGravity(simulatedObjects[i], simulatedObjects[j], deltaTime)
 			end
 		end
 		

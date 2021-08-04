@@ -184,12 +184,11 @@ RunService.Heartbeat:Connect(
 		
 		deltaTime *= SIMULATION_TIME_MULTIPLIER
 		
-		for _, planetA in pairs(simulatedObjects) do
-			for _, planetB in pairs(simulatedObjects) do
-				
+		for i = 1, #simulatedObjects - 1 do
+			for j = i+1, #simulatedObjects do
 				-- Apply gravity if and only if 
-				if planetA ~= planetB then
-					ApplyGravity(planetA, planetB, deltaTime)
+				if simulatedObjects[i] ~= simulatedObjects[j] then
+					ApplyGravity(simulatedObjects[i], simulatedObjects[j], deltaTime)
 				end
 				
 			end
